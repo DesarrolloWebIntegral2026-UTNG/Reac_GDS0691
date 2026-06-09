@@ -10,6 +10,9 @@ jobs:
     steps:
       - name: Datos del Pull Request
         run: |
+          echo "Destino (base):  ${{ github.event.pull_request.base.ref }}"
+          echo "Origen (head):   ${{ github.event.pull_request.head.ref }}"
           echo "Título:          ${{ github.event.pull_request.title }}"
           echo "Contenido:       ${{ github.event.pull_request.body }}"
           echo "Estado:          ${{ github.event.pull_request.state }}"
+          echo "¿Fusionado?:     ${{ github.event.pull_request.merged }}"
